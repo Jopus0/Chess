@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076c3b20acbd10c40b7dc6ed2bd082b8, type: 3}
+  m_Name: Default
+  m_EditorClassIdentifier: 
+  BoardWidth: 8
+  BoardHeight: 8
+  Arrangement:
+  - PieceType: 2
+    Position:
+      Row: 6
+      Column: 4
+    WhiteOrBlack: 1
+  - PieceType: 2
+    Position:
+      Row: 1
+      Column: 4
+    WhiteOrBlack: 0
+  - PieceType: 4
+    Position:
+      Row: 7
+      Column: 2
+    WhiteOrBlack: 1
+  - PieceType: 4
+    Position:
+      Row: 7
+      Column: 3
+    WhiteOrBlack: 1
+  - PieceType: 2
+    Position:
+      Row: 5
+      Column: 4
+    WhiteOrBlack: 0
+  - PieceType: 3
+    Position:
+      Row: 1
+      Column: 1
+    WhiteOrBlack: 1
+  - PieceType: 3
+    Position:
+      Row: 2
+      Column: 2
+    WhiteOrBlack: 0
