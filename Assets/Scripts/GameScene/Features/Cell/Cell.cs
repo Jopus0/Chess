@@ -19,6 +19,7 @@ public class Cell : MonoBehaviour
         _cellView.SetIndices(columnIndex, rowIndex, indexColor);
         _cellView.SetColor(color);
         _cellView.SetOutline(boardStyleSettings.MoveOutlineSprite, boardStyleSettings.AttackOutlineSprite);
+        _cellView.SetOutlineColor(boardStyleSettings.MoveOutlineColor, boardStyleSettings.AttackOutlineColor);
     }
     public Piece GetPiece()
     {

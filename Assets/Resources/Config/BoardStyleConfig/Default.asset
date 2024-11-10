@@ -16,6 +16,8 @@ MonoBehaviour:
   BlackColor: {r: 0.23033106, g: 0.4716981, b: 0.2202741, a: 1}
   MoveOutlineSprite: {fileID: 21300000, guid: dda8faeb832de3746bff9de2c10b01c3, type: 3}
   AttackOutlineSprite: {fileID: 21300000, guid: d0b276a0f9cee5b468d112c30b073440, type: 3}
+  MoveOutlineColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.78431374}
+  AttackOutlineColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.78431374}
   WhiteKingSprite: {fileID: 58706153, guid: e8d332ea4fa5ed84a8bf62124c4f0929, type: 3}
   BlackKingSprite: {fileID: 1147013462, guid: e8d332ea4fa5ed84a8bf62124c4f0929, type: 3}
   WhitePawnSprite: {fileID: 994667230, guid: e8d332ea4fa5ed84a8bf62124c4f0929, type: 3}

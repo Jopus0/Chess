@@ -9,6 +9,9 @@ public class BoardStyleSettings : ScriptableObject
     public Sprite MoveOutlineSprite;
     public Sprite AttackOutlineSprite;
 
+    public Color MoveOutlineColor;
+    public Color AttackOutlineColor;
+
     public Sprite WhiteKingSprite;
     public Sprite BlackKingSprite;
 

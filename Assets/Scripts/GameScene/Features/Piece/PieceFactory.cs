@@ -8,6 +8,7 @@ public class PieceFactory
         _whitePieces = new Dictionary<Enums.PieceType, Piece>()
         {
             { Enums.PieceType.None, null },
+            { Enums.PieceType.King, new King(true, boardStyleSettings.WhiteKingSprite) },
             { Enums.PieceType.Pawn, new Pawn(true, boardStyleSettings.WhitePawnSprite) },
             { Enums.PieceType.Bishop, new Bishop(true, boardStyleSettings.WhiteBishopSprite) },
             { Enums.PieceType.Horse, new Horse(true, boardStyleSettings.WhiteHorseSprite) },
@@ -16,6 +17,7 @@ public class PieceFactory
         _blackPieces = new Dictionary<Enums.PieceType, Piece>()
         {
             { Enums.PieceType.None, null },
+            { Enums.PieceType.King, new King(true, boardStyleSettings.BlackKingSprite) },
             { Enums.PieceType.Pawn, new Pawn(false, boardStyleSettings.BlackPawnSprite) },
             { Enums.PieceType.Bishop, new Bishop(false, boardStyleSettings.BlackBishopSprite) },
             { Enums.PieceType.Horse, new Horse(true, boardStyleSettings.BlackHorseSprite) },

@@ -17,7 +17,8 @@ public class BoardView: MonoBehaviour
         _boardStyleSettings = boardStyleSettings;
 
         screenSize = new Vector2(Screen.width, Screen.height);
-        ÑreateBoard();
+        Debug.Log(Screen.width);
+        Debug.Log(Screen.height);
     }
     public Cell[,] ÑreateBoard()
     {

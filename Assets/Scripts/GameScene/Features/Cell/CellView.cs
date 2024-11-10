@@ -7,7 +7,6 @@ public class CellView : MonoBehaviour
     [SerializeField] private Image _cellImage;
     [SerializeField] private Image _pieceImage;
     [SerializeField] private Image _outlineImage;
-    [SerializeField] private Color _outlineColor;
     [SerializeField] private BoxCollider2D _collider;
     [SerializeField] private RectTransform _rectTransform;
     [SerializeField] private TextMeshProUGUI _columnIndexText;
@@ -17,13 +16,15 @@ public class CellView : MonoBehaviour
     private Color _cellBaseColor;
     private Color _cellHighlightColor;
 
+    private Color _moveOutlineColor;
+    private Color _attackOutlineColor;
+
     private Sprite _moveOutlineSprite;
     private Sprite _attackOutlineSprite;
 
     public void Init()
     {
         _pieceImage.gameObject.SetActive(false);
-        _outlineImage.color = _outlineColor;
         _outlineImage.gameObject.SetActive(false);
     }
     public void SetPosition(Vector2 position, float size)
@@ -81,10 +82,12 @@ public class CellView : MonoBehaviour
             if (moveOrAttack)
             {
                 _outlineImage.sprite = _moveOutlineSprite;
+                _outlineImage.color = _moveOutlineColor;
             }
             else
             {
                 _outlineImage.sprite = _attackOutlineSprite;
+                _outlineImage.color = _attackOutlineColor;
             }
         }
     }
@@ -92,6 +95,11 @@ public class CellView : MonoBehaviour
     {
         _moveOutlineSprite = moveOutline;
         _attackOutlineSprite = attackOutline;
+    }
+    public void SetOutlineColor(Color moveOutlineColor, Color attackOutlineColor)
+    {
+        _moveOutlineColor = moveOutlineColor;
+        _attackOutlineColor = attackOutlineColor;
     }
     private Color MakeLighterColor(Color color)
     {

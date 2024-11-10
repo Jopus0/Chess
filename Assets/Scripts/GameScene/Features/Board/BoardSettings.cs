@@ -5,6 +5,7 @@ public class BoardSettings : ScriptableObject
 {
     public int BoardWidth;
     public int BoardHeight;
+    public bool WhiteOrBlackMove;
     public PiecePosition[] Arrangement;
 }
 

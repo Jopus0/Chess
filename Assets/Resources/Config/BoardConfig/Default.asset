@@ -14,7 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoardWidth: 8
   BoardHeight: 8
+  WhiteOrBlackMove: 1
   Arrangement:
+  - PieceType: 1
+    Position:
+      Row: 7
+      Column: 4
+    WhiteOrBlack: 1
+  - PieceType: 2
+    Position:
+      Row: 6
+      Column: 0
+    WhiteOrBlack: 1
+  - PieceType: 2
+    Position:
+      Row: 6
+      Column: 1
+    WhiteOrBlack: 1
+  - PieceType: 2
+    Position:
+      Row: 6
+      Column: 2
+    WhiteOrBlack: 1
+  - PieceType: 2
+    Position:
+      Row: 6
+      Column: 3
+    WhiteOrBlack: 1
   - PieceType: 2
     Position:
       Row: 6
@@ -22,31 +48,36 @@ MonoBehaviour:
     WhiteOrBlack: 1
   - PieceType: 2
     Position:
-      Row: 1
-      Column: 4
-    WhiteOrBlack: 0
-  - PieceType: 4
-    Position:
-      Row: 7
-      Column: 2
-    WhiteOrBlack: 1
-  - PieceType: 4
-    Position:
-      Row: 7
-      Column: 3
+      Row: 6
+      Column: 5
     WhiteOrBlack: 1
   - PieceType: 2
     Position:
-      Row: 5
-      Column: 4
-    WhiteOrBlack: 0
+      Row: 6
+      Column: 6
+    WhiteOrBlack: 1
+  - PieceType: 2
+    Position:
+      Row: 6
+      Column: 7
+    WhiteOrBlack: 1
   - PieceType: 3
     Position:
-      Row: 1
+      Row: 7
       Column: 1
     WhiteOrBlack: 1
   - PieceType: 3
     Position:
-      Row: 2
+      Row: 7
+      Column: 6
+    WhiteOrBlack: 1
+  - PieceType: 4
+    Position:
+      Row: 7
       Column: 2
-    WhiteOrBlack: 0
+    WhiteOrBlack: 1
+  - PieceType: 4
+    Position:
+      Row: 7
+      Column: 5
+    WhiteOrBlack: 1

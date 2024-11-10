@@ -1,20 +1,16 @@
-using Unity.VisualScripting;
 using UnityEngine;
 public class BoardContoller : MonoBehaviour 
 {
-    [SerializeField] private BoardSettings _boardSettings;
-    [SerializeField] private BoardStyleSettings _boardStyleSettings;
-
     [SerializeField] private BoardView _boardView;
     [SerializeField] private Board _board;
 
-    private void Start()
+    public void Init(BoardSettings boardSettings, BoardStyleSettings boardStyleSettings)
     {
-        Vector2Int boardSize = new Vector2Int(_boardSettings.BoardHeight, _boardSettings.BoardWidth);
+        Vector2Int boardSize = new Vector2Int(boardSettings.BoardHeight, boardSettings.BoardWidth);
 
-        _boardView.Init(boardSize, _boardStyleSettings);
+        _boardView.Init(boardSize, boardStyleSettings);
 
-        PieceFactory pieceFactory = new PieceFactory(_boardStyleSettings);
-        _board = new Board(pieceFactory, boardSize, _boardSettings.Arrangement, _boardView.ÑreateBoard());
+        PieceFactory pieceFactory = new PieceFactory(boardStyleSettings);
+        _board = new Board(pieceFactory, boardSize, boardSettings.Arrangement, boardSettings.WhiteOrBlackMove, _boardView.ÑreateBoard());
     }
 }
