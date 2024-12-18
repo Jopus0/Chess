@@ -6,6 +6,9 @@ public class BoardStyleSettings : ScriptableObject
     public Color WhiteColor;
     public Color BlackColor;
 
+    public Color CheckCellColor;
+    public Color MateCellColor;
+
     public Sprite MoveOutlineSprite;
     public Sprite AttackOutlineSprite;
 

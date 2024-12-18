@@ -43,7 +43,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_SizeDelta: {x: 108, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7932585156910005006
 CanvasRenderer:
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc8fd7d266c0d140bac32be0c2f7197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cellView: {fileID: 206281830553773432}
+  CellView: {fileID: 206281830553773432}
 --- !u!114 &206281830553773432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +111,6 @@ MonoBehaviour:
   _cellImage: {fileID: 2697642129818369147}
   _pieceImage: {fileID: 6154673919954576944}
   _outlineImage: {fileID: 8855141895246956766}
-  _outlineColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.78431374}
   _collider: {fileID: 1177919858030953347}
   _rectTransform: {fileID: 4688550582476342387}
   _columnIndexText: {fileID: 2103559490650887590}
@@ -268,7 +267,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.35
+  m_fontSize: 24
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -402,7 +401,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.35
+  m_fontSize: 24.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

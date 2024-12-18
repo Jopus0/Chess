@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WhiteColor: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
   BlackColor: {r: 0.23033106, g: 0.4716981, b: 0.2202741, a: 1}
+  CheckCellColor: {r: 0.754717, g: 0.7501457, b: 0.35243857, a: 1}
+  MateCellColor: {r: 0.6415094, g: 0.31167677, b: 0.31167677, a: 1}
   MoveOutlineSprite: {fileID: 21300000, guid: dda8faeb832de3746bff9de2c10b01c3, type: 3}
   AttackOutlineSprite: {fileID: 21300000, guid: d0b276a0f9cee5b468d112c30b073440, type: 3}
   MoveOutlineColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.78431374}

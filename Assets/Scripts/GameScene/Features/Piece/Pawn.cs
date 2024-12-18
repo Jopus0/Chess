@@ -1,26 +1,20 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 public class Pawn : Piece
 {
     private CellPosition[] _singleMovement;
-    private CellPosition[] _doubleSingleMovement;
     private CellPosition[] _singleAttackMovement;
-    private int doubleMoveRow;
     public Pawn(bool whiteOrBlack, Sprite pieceSprite) : base(whiteOrBlack, pieceSprite) 
     {
         if (WhiteOrBlack)
         {
             _singleMovement = new CellPosition[] { new CellPosition(-1, 0) };
             _singleAttackMovement = new CellPosition[] { new CellPosition(-1, -1), new CellPosition(-1, 1) };
-            doubleMoveRow = 6;
         }
         else
         {
             _singleMovement = new CellPosition[] { new CellPosition(1, 0) };
             _singleAttackMovement = new CellPosition[] { new CellPosition(1, -1), new CellPosition(1, 1) };
-            doubleMoveRow = 1;
         }
     }
     public override List<CellPosition> FindMoves(int[,] board, CellPosition position)
@@ -33,7 +27,7 @@ public class Pawn : Piece
     }
     private int GetMovesCount(CellPosition position)
     {
-        if (position.Row == doubleMoveRow)
+        if (!IsMoved)
         {
             return 2;
         }

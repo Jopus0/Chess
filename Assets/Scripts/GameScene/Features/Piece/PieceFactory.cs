@@ -1,37 +1,30 @@
+using System;
 using System.Collections.Generic;
+
 public class PieceFactory
 {
-    private Dictionary<Enums.PieceType, Piece> _whitePieces;
-    private Dictionary<Enums.PieceType, Piece> _blackPieces;
+    private Dictionary<Enums.PieceType, Func<bool, Piece>> _pieceCreators;
+
     public PieceFactory(BoardStyleSettings boardStyleSettings)
     {
-        _whitePieces = new Dictionary<Enums.PieceType, Piece>()
+        _pieceCreators = new Dictionary<Enums.PieceType, Func<bool, Piece>>()
         {
-            { Enums.PieceType.None, null },
-            { Enums.PieceType.King, new King(true, boardStyleSettings.WhiteKingSprite) },
-            { Enums.PieceType.Pawn, new Pawn(true, boardStyleSettings.WhitePawnSprite) },
-            { Enums.PieceType.Bishop, new Bishop(true, boardStyleSettings.WhiteBishopSprite) },
-            { Enums.PieceType.Horse, new Horse(true, boardStyleSettings.WhiteHorseSprite) },
-        };
-
-        _blackPieces = new Dictionary<Enums.PieceType, Piece>()
-        {
-            { Enums.PieceType.None, null },
-            { Enums.PieceType.King, new King(true, boardStyleSettings.BlackKingSprite) },
-            { Enums.PieceType.Pawn, new Pawn(false, boardStyleSettings.BlackPawnSprite) },
-            { Enums.PieceType.Bishop, new Bishop(false, boardStyleSettings.BlackBishopSprite) },
-            { Enums.PieceType.Horse, new Horse(true, boardStyleSettings.BlackHorseSprite) },
+            { Enums.PieceType.None, _ => null },
+            { Enums.PieceType.King, white => new King(white, white ? boardStyleSettings.WhiteKingSprite : boardStyleSettings.BlackKingSprite) },
+            { Enums.PieceType.Pawn, white => new Pawn(white, white ? boardStyleSettings.WhitePawnSprite : boardStyleSettings.BlackPawnSprite) },
+            { Enums.PieceType.Bishop, white => new Bishop(white, white ? boardStyleSettings.WhiteBishopSprite : boardStyleSettings.BlackBishopSprite) },
+            { Enums.PieceType.Horse, white => new Horse(white, white ? boardStyleSettings.WhiteHorseSprite : boardStyleSettings.BlackHorseSprite) },
+            { Enums.PieceType.Rook, white => new Rook(white, white ? boardStyleSettings.WhiteRookSprite : boardStyleSettings.BlackRookSprite) },
+            { Enums.PieceType.Queen, white => new Queen(white, white ? boardStyleSettings.WhiteQueenSprite : boardStyleSettings.BlackQueenSprite) },
         };
     }
+
     public Piece GetPieceByType(Enums.PieceType pieceType, bool whiteOrBlack)
     {
-        if (whiteOrBlack)
+        if (_pieceCreators.TryGetValue(pieceType, out var creator))
         {
-            return _whitePieces[pieceType];
+            return creator(whiteOrBlack);
         }
-        else
-        {
-            return _blackPieces[pieceType];
-        }
+        throw new ArgumentException($"Invalid piece type: {pieceType}");
     }
 }

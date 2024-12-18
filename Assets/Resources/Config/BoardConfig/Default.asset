@@ -81,3 +81,98 @@ MonoBehaviour:
       Row: 7
       Column: 5
     WhiteOrBlack: 1
+  - PieceType: 1
+    Position:
+      Row: 0
+      Column: 4
+    WhiteOrBlack: 0
+  - PieceType: 2
+    Position:
+      Row: 1
+      Column: 0
+    WhiteOrBlack: 0
+  - PieceType: 2
+    Position:
+      Row: 1
+      Column: 1
+    WhiteOrBlack: 0
+  - PieceType: 2
+    Position:
+      Row: 1
+      Column: 2
+    WhiteOrBlack: 0
+  - PieceType: 2
+    Position:
+      Row: 1
+      Column: 3
+    WhiteOrBlack: 0
+  - PieceType: 2
+    Position:
+      Row: 1
+      Column: 4
+    WhiteOrBlack: 0
+  - PieceType: 2
+    Position:
+      Row: 1
+      Column: 5
+    WhiteOrBlack: 0
+  - PieceType: 2
+    Position:
+      Row: 1
+      Column: 6
+    WhiteOrBlack: 0
+  - PieceType: 2
+    Position:
+      Row: 1
+      Column: 7
+    WhiteOrBlack: 0
+  - PieceType: 3
+    Position:
+      Row: 0
+      Column: 6
+    WhiteOrBlack: 0
+  - PieceType: 3
+    Position:
+      Row: 0
+      Column: 1
+    WhiteOrBlack: 0
+  - PieceType: 4
+    Position:
+      Row: 0
+      Column: 5
+    WhiteOrBlack: 0
+  - PieceType: 4
+    Position:
+      Row: 0
+      Column: 2
+    WhiteOrBlack: 0
+  - PieceType: 5
+    Position:
+      Row: 0
+      Column: 7
+    WhiteOrBlack: 0
+  - PieceType: 5
+    Position:
+      Row: 0
+      Column: 0
+    WhiteOrBlack: 0
+  - PieceType: 6
+    Position:
+      Row: 0
+      Column: 3
+    WhiteOrBlack: 0
+  - PieceType: 5
+    Position:
+      Row: 7
+      Column: 0
+    WhiteOrBlack: 1
+  - PieceType: 5
+    Position:
+      Row: 7
+      Column: 7
+    WhiteOrBlack: 1
+  - PieceType: 6
+    Position:
+      Row: 7
+      Column: 3
+    WhiteOrBlack: 1

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,49 +15,15 @@ public class CellView : MonoBehaviour
     [SerializeField] private float _highlightFactor;
 
     private Color _cellBaseColor;
+    private Color _cellCurrentColor;
     private Color _cellHighlightColor;
-
-    private Color _moveOutlineColor;
-    private Color _attackOutlineColor;
-
-    private Sprite _moveOutlineSprite;
-    private Sprite _attackOutlineSprite;
 
     public void Init()
     {
         _pieceImage.gameObject.SetActive(false);
         _outlineImage.gameObject.SetActive(false);
-    }
-    public void SetPosition(Vector2 position, float size)
-    {
-        _rectTransform.sizeDelta = new Vector2(size, size);
-        _collider.size = new Vector2(size, size);
-        _rectTransform.anchorMin = new Vector2(position.x, position.y);
-        _rectTransform.anchorMax = new Vector2(position.x, position.y);
-        _rectTransform.anchoredPosition = Vector2.zero;
-    }
-    public void SetIndices(string columnIndex, string rowIndex, Color indexColor)
-    {
-        ChangeIndex(_columnIndexText, columnIndex, indexColor);
-        ChangeIndex(_rowIndexText, rowIndex, indexColor);
-    }
-    private void ChangeIndex(TextMeshProUGUI indexText, string index, Color indexColor)
-    {
-        if (index == null)
-        {
-            indexText.gameObject.SetActive(false);
-            return;
-        }
-
-        indexText.text = index;
-        indexText.color = indexColor;
-    }
-    public void SetColor(Color color)
-    {
-        _cellImage.color = color;
-
-        _cellBaseColor = color;
-        _cellHighlightColor = MakeLighterColor(color);
+        _rowIndexText.gameObject.SetActive(false);
+        _columnIndexText.gameObject.SetActive(false);
     }
     public void ChangePiece(Sprite pieceSprite)
     {
@@ -66,40 +33,54 @@ public class CellView : MonoBehaviour
         }
         else
         {
-            _pieceImage.gameObject.SetActive(true);
             _pieceImage.sprite = pieceSprite;
+            _pieceImage.gameObject.SetActive(true);
         }
     }
-    public void ChangeOutline(bool showOrClose, bool moveOrAttack)
+    public void SetPosition(Vector2 position, float size)
     {
-        if (!showOrClose)
-        {
-            _outlineImage.gameObject.SetActive(false);
-        }
-        else
-        {
-            _outlineImage.gameObject.SetActive(true);
-            if (moveOrAttack)
-            {
-                _outlineImage.sprite = _moveOutlineSprite;
-                _outlineImage.color = _moveOutlineColor;
-            }
-            else
-            {
-                _outlineImage.sprite = _attackOutlineSprite;
-                _outlineImage.color = _attackOutlineColor;
-            }
-        }
+        _rectTransform.sizeDelta = new Vector2(size, size);
+        _collider.size = new Vector2(size, size);
+        _rectTransform.anchorMin = new Vector2(position.x, position.y);
+        _rectTransform.anchorMax = new Vector2(position.x, position.y);
+        _rectTransform.anchoredPosition = Vector2.zero;
     }
-    public void SetOutline(Sprite moveOutline, Sprite attackOutline)
+    public void SetRowIndex(string index, Color indexColor)
     {
-        _moveOutlineSprite = moveOutline;
-        _attackOutlineSprite = attackOutline;
+        _rowIndexText.gameObject.SetActive(true);
+        _rowIndexText.text = index;
+        _rowIndexText.color = indexColor;
     }
-    public void SetOutlineColor(Color moveOutlineColor, Color attackOutlineColor)
+    public void SetColumnIndex(string index, Color indexColor)
     {
-        _moveOutlineColor = moveOutlineColor;
-        _attackOutlineColor = attackOutlineColor;
+        _columnIndexText.gameObject.SetActive(true);
+        _columnIndexText.text = index;
+        _columnIndexText.color = indexColor;
+    }
+    public void SetBaseColor(Color color)
+    {
+        _cellBaseColor = color;
+        SetColor(color);
+    }
+    public void SetColor(Color color)
+    {
+        _cellCurrentColor = color;
+        _cellImage.color = color;
+        _cellHighlightColor = MakeLighterColor(color);
+    }
+    public void ClearColor()
+    {
+        SetColor(_cellBaseColor);
+    }
+    public void SetOutline(Sprite outlineSprite, Color outlineColor)
+    {
+        _outlineImage.gameObject.SetActive(true);
+        _outlineImage.sprite = outlineSprite;
+        _outlineImage.color = outlineColor;
+    }
+    public void ClearOutline()
+    {
+        _outlineImage.gameObject.SetActive(false);
     }
     private Color MakeLighterColor(Color color)
     {
@@ -110,16 +91,11 @@ public class CellView : MonoBehaviour
             color.a
         );
     }
-
-    public void OnHighlight(bool isHighlighted)
+    public void Highlight(bool enterOrExit)
     {
-        if(isHighlighted)
-        {
+        if(enterOrExit)
             _cellImage.color = _cellHighlightColor;
-        }
         else
-        {
-            _cellImage.color = _cellBaseColor;
-        }
+            _cellImage.color = _cellCurrentColor;
     }
 }

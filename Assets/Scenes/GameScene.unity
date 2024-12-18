@@ -700,7 +700,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 352880630}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -764,6 +764,7 @@ MonoBehaviour:
   boardTransform: {fileID: 1532730136}
   _upperLeftPoint: {x: 0.1, y: 0.9}
   _lowerRightPoint: {x: 0.9, y: 0.1}
+  _baseCellSize: 135
 --- !u!114 &1532730138
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,4 +15,5 @@ public class PiecePosition
     public Enums.PieceType PieceType;
     public CellPosition Position;
     public bool WhiteOrBlack;
+    public bool IsMoved;
 }
